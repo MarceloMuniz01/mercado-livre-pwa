@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#ffe600">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Mercado Livre">
+  <meta name="description" content="Aviso de indisponibilidade de conta — simulação pessoal.">
+  <title>Mercado Livre — Aviso de conta</title>
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" type="image/png" sizes="192x192" href="./icons/icon-192.png">
+  <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png">
+  <style>
+    :root{color-scheme:light; --yellow:#ffe600; --blue:#2259c5; --navy:#2d3277;--muted:#686868;--ink:#202124}
+    *{box-sizing:border-box}
+    body{margin:0;background:#fff;color:var(--ink);font-family:Arial,Helvetica,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+    header{background:var(--yellow);height:85px;display:flex;align-items:center;box-shadow:0 1px 0 rgba(0,0,0,.05)}
+    .header-inner{width:min(100%,1100px);margin:auto;padding:0 22px;display:flex;align-items:center;gap:9px}
+    .handshake{width:67px;height:39px;object-fit:contain;mix-blend-mode:multiply}
+    .brand{display:flex;flex-direction:column;font-size:26px;line-height:.83;font-weight:800;letter-spacing:-1.5px;color:var(--navy)}
+    main{width:min(100%,570px);margin:0 auto;min-height:calc(100dvh - 85px);padding:80px 24px 40px;text-align:center;display:flex;flex-direction:column;align-items:center}
+    .symbol-circle{display:grid;place-items:center;width:138px;height:138px;background:#fde7e7;border-radius:50%;margin-bottom:28px}
+    .symbol-circle svg{width:68px;height:68px;fill:#c43131}
+    h1{margin:0 0 22px;font-size:32px;line-height:1.18;letter-spacing:-.7px;font-weight:750}
+    .description{font-size:17px;line-height:1.48;color:#515151;margin:0 0 13px}
+    .cta{display:flex;align-items:center;justify-content:center;gap:11px;width:100%;min-height:58px;border:0;border-radius:7px;background:#2860cf;color:#fff;font-size:17px;font-weight:700;cursor:pointer;margin-top:32px;box-shadow:0 1px 3px rgba(0,0,0,.1)}
+    .cta:focus-visible,.secondary:focus-visible,.dialog-close:focus-visible{outline:3px solid #252b87;outline-offset:3px}
+    .cta:active{background:#1b4ea8}
+    .cta svg{width:23px;height:23px;stroke:currentColor;stroke-width:2;fill:none}
+    .secondary{margin-top:25px;background:transparent;color:#2462ce;border:0;font-size:16px;cursor:pointer;padding:5px}
+    .details{margin-top:12px;text-align:left;border:1px solid #e4e4e4;background:#fafafa;border-radius:8px;padding:18px 20px;color:#535353;font-size:14px;line-height:1.5;width:100%}
+    .details[hidden],.dialog-layer[hidden]{display:none}
+    .dialog-layer{position:fixed;inset:0;background:#0006;display:grid;place-items:center;padding:24px}
+    .dialog{width:min(100%,390px);background:#fff;border-radius:12px;box-shadow:0 12px 40px #0003;padding:28px;text-align:left}
+    .dialog h2{margin:0 0 12px;font-size:22px}
+    .dialog p{margin:0 0 24px;color:#555;line-height:1.45}
+    .dialog-close{background:#2860cf;color:white;border:0;padding:13px 20px;border-radius:6px;font-size:16px;font-weight:bold;cursor:pointer}
+    @media(max-width:480px){header{height:71px}.header-inner{padding:0 17px}.handshake{width:59px;height:37px}.brand{font-size:24px}main{min-height:calc(100dvh - 71px);padding:62px 26px 36px}.symbol-circle{width:125px;height:125px;margin-bottom:26px}.symbol-circle svg{width:62px;height:62px}h1{font-size:29px;margin-bottom:24px}.description{font-size:16px;line-height:1.5}.cta{margin-top:28px}}
+    @media(max-width:350px){h1{font-size:25px}.description{font-size:15px}}
+    @media(min-height:850px) and (max-width:480px){main{padding-top:90px}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-inner" aria-label="Mercado Livre">
+      <img class="handshake" src="./icons/handshake.png" alt="">
+      <div class="brand" aria-hidden="true"><span>mercado</span><span>livre</span></div>
+    </div>
+  </header>
+  <main>
+    <div class="symbol-circle" aria-hidden="true">
+      <svg viewBox="0 0 64 64" role="img"><path d="M19 25v-7a13 13 0 0 1 26 0v7h3a5 5 0 0 1 5 5v25a5 5 0 0 1-5 5H16a5 5 0 0 1-5-5V30a5 5 0 0 1 5-5zm7 0h12v-7a6 6 0 1 0-12 0zM32 35a5 5 0 0 0-2 9.58V50h4v-5.42A5 5 0 0 0 32 35z"/></svg>
+    </div>
+    <h1>Sua conta foi banida por 60 dias.</h1>
+    <p class="description">Identificamos uma violação dos nossos Termos e Condições de uso.</p>
+    <p class="description">Durante esse período, você não poderá comprar nem vender no Mercado Livre.</p>
+    <button class="cta" id="contact" type="button">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 14v-2a8 8 0 0 1 16 0v2M4 14H3a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h3v-6H4zm16 0h1a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-3v-6h2zm0 6c0 2-2 3-5 3h-3"/></svg>
+      Contatar o suporte
+    </button>
+    <button class="secondary" id="more" type="button" aria-expanded="false" aria-controls="details">Saiba mais sobre o banimento</button>
+    <section class="details" id="details" hidden>
+      A restrição de compra e venda permanece ativa durante 60 dias. Para mais informações, utilize o canal de suporte.
+    </section>
+  </main>
+  <div class="dialog-layer" id="dialog" hidden role="presentation">
+    <div class="dialog" role="dialog" aria-modal="true" aria-labelledby="dialog-title">
+      <h2 id="dialog-title">Suporte indisponível</h2>
+      <p>Não foi possível iniciar o atendimento no momento. Tente novamente mais tarde.</p>
+      <button type="button" id="close" class="dialog-close">Entendi</button>
+    </div>
+  </div>
+  <script>
+    const more = document.getElementById('more');
+    const details = document.getElementById('details');
+    const dialog = document.getElementById('dialog');
+    const close = document.getElementById('close');
+    more.addEventListener('click', () => {
+      details.hidden = !details.hidden;
+      more.setAttribute('aria-expanded', String(!details.hidden));
+    });
+    document.getElementById('contact').addEventListener('click', () => {
+      dialog.hidden = false;close.focus();
+    });
+    close.addEventListener('click', () => {dialog.hidden = true;document.getElementById('contact').focus();});
+    dialog.addEventListener('click', e => {if(e.target === dialog){dialog.hidden=true;}});
+    document.addEventListener('keydown', e => {if(e.key === 'Escape'){dialog.hidden=true;}});
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js').catch(() => {}));
+    }
+  </script>
+</body>
+</html>
